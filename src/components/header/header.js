@@ -2,7 +2,13 @@ import Logo from "../brand-icon.svg"
 import CartIcon from "./headercomponents/cart-icon.svg"
 import "./header.css"
 
+
+
 const Header = () => {
+
+ 
+
+
     return(
     <div className="header">
         <div className="header-navigation">

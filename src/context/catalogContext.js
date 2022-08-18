@@ -1,14 +1,17 @@
-import { createContext, useEffect, useState } from "react";    
+import React, { createContext, useEffect, useState } from "react";    
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
-const CatalogContext = createContext();
+import { render } from "react-dom";
 
 
 
-export function CatalogProvider({ children }) {
+const CatalogContext = createContext()
 
-    const [catalogItems, setCatalogItems] = useState(null)
+export class CatalogProvider extends React.Component {
 
-    useEffect(() => {
+    state = {
+        productList: [],
+    }
+componentDidMount() {
     const client = new ApolloClient({
         uri: 'http://localhost:4000/',
         cache: new InMemoryCache(),
@@ -26,19 +29,30 @@ export function CatalogProvider({ children }) {
                     amount
                 }
                 inStock
+                id
                 }
             }
             }
         `,
         })
-        .then((result) => setCatalogItems(result?.data?.category?.products));
+        .then((result) => {
+            // const products = result?.data?.category?.products
+            this.setState({
+                productList: result?.data?.category?.products
+            })
+         console.log()   
+        })
+}
 
-    }, [])
 
 
-    return(
-        <CatalogContext.Provider value={{ productList: catalogItems }}>{children}</CatalogContext.Provider>
-    )
+    render() {
+        const { productList } = this.state
+        return(
+            <CatalogContext.Provider value={{ productList }}>{this.props.children}</CatalogContext.Provider>
+        )
+    }
+
 }
 
 export default CatalogContext;

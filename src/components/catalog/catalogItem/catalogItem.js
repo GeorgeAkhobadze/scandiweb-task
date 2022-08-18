@@ -3,16 +3,18 @@
  import React, { useState } from "react"
 import "./catalogitem.css"
 class CatalogItem extends React.Component {
+
     // {name, price, image, inStock}
     render() {
+        console.log(this.props)
         return(
 
             <div className="catalogitem">
                 <img className="catalog-add-btn" src={CartIcon} alt="Add to Cart"/>
                             <div className="catalogitem-img">
-                    <img src={CatalogImage}/>   
+                    <img src={this.props.image[0]}/>   
                 </div>
-                <a className="catalogitem-title">test123</a>
+                <a className="catalogitem-title">{this.props.name}</a>
                 <a className="catalogitem-price">$50.00</a>
             </div>
         )

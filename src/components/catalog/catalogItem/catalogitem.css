@@ -8,7 +8,7 @@
     box-sizing: border-box;
     width: calc(100% / 3 - 40px);
     position: relative;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .catalogitem:hover {

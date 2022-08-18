@@ -1,29 +1,18 @@
 
 import "./catalog.css"
-import { useContext } from "react"
+import React from "react"
 import CatalogContext from "../../context/catalogContext"
 import CatalogItem from "./catalogItem/catalogItem"
+import CartOverlay from "../cartoverlay/cartOverlay"
 
-const Catalog = () => {
+class Catalog extends React.Component {
+    static contextType = CatalogContext
+    render() {
+        console.log(this.context)
+        return <CatalogItem/>
+    }
 
-    const { productList } = useContext(CatalogContext)
-    console.log(productList)
-
-    return(
-<>
-        <h3 className="catalog-title">Category Name</h3>
-        <div className="catalog">
-            {productList?.map((item , index) =>{
-                return(
-                 <CatalogItem key={index}  name={item?.name} image={item?.gallery[0]} />
-                )
-                
-            })}
-        </div>
- 
-        </>
-
-    )
+    // componentDidMount()
 }
 
 export default Catalog;

@@ -25,6 +25,7 @@ export function CatalogProvider({ children }) {
                 prices {
                     amount
                 }
+                inStock
                 }
             }
             }

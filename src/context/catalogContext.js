@@ -1,6 +1,5 @@
-import React, { createContext, useEffect, useState } from "react";    
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
-import { render } from "react-dom";
+import React, { createContext } from "react";    
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 
 
@@ -11,6 +10,7 @@ export class CatalogProvider extends React.Component {
     state = {
         productList: [],
     }
+
 componentDidMount() {
     const client = new ApolloClient({
         uri: 'http://localhost:4000/',
@@ -39,8 +39,7 @@ componentDidMount() {
             // const products = result?.data?.category?.products
             this.setState({
                 productList: result?.data?.category?.products
-            })
-         console.log()   
+            })  
         })
 }
 

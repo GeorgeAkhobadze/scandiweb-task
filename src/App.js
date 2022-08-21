@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Catalog from './components/catalog/catalog';
 import { CatalogProvider } from './context/catalogContext';
 import React from 'react';
+import { PriceProvider } from './context/priceContext';
 
 
 
@@ -14,10 +15,12 @@ export default class App extends React.Component {
   return (
     <div className="App">
       <CatalogProvider>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Catalog/>}></Route>
-      </Routes>
+        <PriceProvider>
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Catalog/>}></Route>
+          </Routes>
+        </PriceProvider>
       </CatalogProvider>
     </div>
   );

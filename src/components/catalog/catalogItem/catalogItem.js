@@ -6,7 +6,7 @@ class CatalogItem extends React.Component {
 
     // {name, price, image, inStock}
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return(
 
             <div className="catalogitem">
@@ -15,7 +15,7 @@ class CatalogItem extends React.Component {
                     <img src={this.props.image[0]}/>   
                 </div>
                 <a className="catalogitem-title">{this.props.name}</a>
-                <a className="catalogitem-price">$50.00</a>
+                <a className="catalogitem-price">{this.props.price}</a>
             </div>
         )
     }

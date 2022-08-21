@@ -36,7 +36,6 @@ componentDidMount() {
         `,
         })
         .then((result) => {
-            // const products = result?.data?.category?.products
             this.setState({
                 productList: result?.data?.category?.products
             })  

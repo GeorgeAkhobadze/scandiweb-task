@@ -4,11 +4,8 @@
 import "./catalogitem.css"
 class CatalogItem extends React.Component {
 
-    // {name, price, image, inStock}
     render() {
-        // console.log(this.props)
         return(
-
             <div className="catalogitem">
                 <img className="catalog-add-btn" src={CartIcon} alt="Add to Cart"/>
                             <div className="catalogitem-img">

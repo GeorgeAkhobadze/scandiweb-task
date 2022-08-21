@@ -34,7 +34,6 @@ componentDidMount() {
         `,
         })
         .then((result) => {
-            console.log(result?.data?.currencies.symbol)
             this.setState({
                 priceList: result?.data?.currencies
             })  
@@ -44,7 +43,6 @@ componentDidMount() {
 
 
     render() {
-        // console.log(priceList)
         return(
             <PriceContext.Provider value={{ ...this.state, changeCurrency: this.changeCurrency }}>{this.props.children}</PriceContext.Provider>
         )

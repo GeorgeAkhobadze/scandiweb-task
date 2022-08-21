@@ -10,16 +10,12 @@ class Catalog extends React.Component {
     static contextType = CatalogContext
 
     render() {
-        // const { productList } = this.context;
-        // console.log(productList, "THIS IS NAME")
-
         return (
             <PriceContext.Consumer>{(priceContext) => (
                 <CatalogContext.Consumer>{(catalogContext) => {
                     const { productList } = catalogContext;
                     const { priceList, priceValue } = priceContext;
                     const CurrencyPosition = priceList.map(function(e) { return e.symbol}).indexOf(priceValue)
-                    console.log(CurrencyPosition, "POs")
                     return(
                         <div className="catalog">
                         {productList.map((product,i) => {
@@ -29,7 +25,6 @@ class Catalog extends React.Component {
                         })}
                         </div>
                     )
-
                 }}
                 </CatalogContext.Consumer>
             )}

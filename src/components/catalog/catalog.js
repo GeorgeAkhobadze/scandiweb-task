@@ -15,12 +15,13 @@ class Catalog extends React.Component {
                 <CatalogContext.Consumer>{(catalogContext) => {
                     const { productList } = catalogContext;
                     const { priceList, priceValue } = priceContext;
-                    const CurrencyPosition = priceList.map(function(e) { return e.symbol}).indexOf(priceValue)
+                    const CurrencyPosition = priceList.map(function(currency){return currency.symbol}).indexOf(priceValue)
                     return(
                         <div className="catalog">
                         {productList.map((product,i) => {
+                            
                             return(
-                                <CatalogItem key={i} name={product.name} image={product.gallery} price={`${priceValue}` + product.prices[CurrencyPosition].amount}/>
+                                <CatalogItem key={i} name={product.name} image={product.gallery} price={`${priceValue}` + product.prices[CurrencyPosition].amount} inStock= {product.inStock} />
                             )
                         })}
                         </div>

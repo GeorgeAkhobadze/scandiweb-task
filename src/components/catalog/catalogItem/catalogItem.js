@@ -13,7 +13,7 @@ class CatalogItem extends React.Component {
                 <img className="catalog-add-btn" src={CartIcon} alt="Add to Cart"/>
                 <div className="catalogitem-img">
                     <img src={this.props.image[0]}/>
-                    {this.props.inStock === false &&
+                    {   this.props.inStock === false &&
                             <div className="out-of-stock">OUT OF STOCK</div>     
                     }
 

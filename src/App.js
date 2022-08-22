@@ -6,6 +6,7 @@ import Catalog from './components/catalog/catalog';
 import { CatalogProvider } from './context/catalogContext';
 import React from 'react';
 import { PriceProvider } from './context/priceContext';
+import ProductPage from './components/productpage/productpage';
 
 
 
@@ -18,7 +19,8 @@ export default class App extends React.Component {
         <PriceProvider>
           <Header/>
           <Routes>
-            <Route path="/" element={<Catalog/>}></Route>
+            <Route path="/" element={<ProductPage/>}></Route>
+            
           </Routes>
         </PriceProvider>
       </CatalogProvider>

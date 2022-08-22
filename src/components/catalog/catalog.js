@@ -16,6 +16,7 @@ class Catalog extends React.Component {
                     const { productList } = catalogContext;
                     const { priceList, priceValue } = priceContext;
                     const CurrencyPosition = priceList.map(function(currency){return currency.symbol}).indexOf(priceValue)
+                    console.log(productList)
                     return(
                         <div className="catalog">
                         {productList.map((product,i) => {

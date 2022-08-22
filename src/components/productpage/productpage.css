@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.productmodal {
+    display: flex;
+    justify-content: space-between;
+    padding: 82px 219px 0px 100px;
+    gap: 100px;
+
+}
+
+.productmodal-images-container {
+    display: flex;
+    gap: 40px;
+    flex-grow: 1;
+}
+
+.productmodal-images-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    gap: 40px;
+}
+
+.productmodal-images-gallery img {
+    height: 80px;
+    /* object-fit: contain; */
+
+}
+
+.productmodal-main-img {
+    width: 100%;
+}
+
+.productmodal-main-img img {
+    width: 100%;
+}
+
+.productmodal-info-container {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    font-family: "Raleway";
+    width: 292px;
+}
+
+.productmodal-brand {
+    color: #1D1F22;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.productmodal-name {
+    color: #1D1F22;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 43px;
+}
+
+.productmodal-default-title {
+    margin: 0px 0px 8px 0px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    color: #1D1F22;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.productmodal-sizes {
+    display: flex;
+    gap: 12px;
+}
+
+.productmodal-size {
+    box-sizing: border-box;
+    width: 65px;
+    padding: 12px 0px;
+    border: 1px solid #1D1F22;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.productmodal-size--active {
+    background-color: #1D1F22;
+    color: #FFF;
+}
+
+.productmodal-colors {
+    display: flex;
+    gap: 8px;
+}
+
+.productmodal-color-container {
+    margin-top: 24px;
+}
+
+.productmodal-color {
+    width: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    background-color: #2B2B2B;
+    padding: 2px;
+    background-clip: content-box; 
+}
+
+.productmodal-color--active {
+    border: solid 1px #5ECE7B;
+}
+
+.productmodal-price-container {
+    margin-top: 36px;
+    margin-bottom: 20px;
+}
+
+.productmodal-price {
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1D1F22;
+}
+
+.productmodal-add-btn {
+    width: 100%;
+    padding: 16px 0px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+    border: none;
+    background-color: #5ECE7B;
+    cursor: pointer;
+}
+
+.productmodal-description {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 25.59px;
+    padding-top: 40px;
+}

@@ -20,7 +20,7 @@ componentDidMount() {
     client
         .query({
         query: gql`
-            query {
+        query {
             category {
                 products {
                 name,
@@ -30,9 +30,10 @@ componentDidMount() {
                 }
                 inStock
                 id
+                description
                 }
             }
-            }
+        }
         `,
         })
         .then((result) => {

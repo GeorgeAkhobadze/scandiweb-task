@@ -1,6 +1,6 @@
 .catalog {
     display: flex;
-    padding: 103px 100px 200px 100px;
+    margin: 103px 100px 200px 100px;
     gap: 40px;
     flex-wrap: wrap;
 }

@@ -14,6 +14,8 @@ import { PriceProvider } from './context/priceContext';
 import ProductPage from './components/productpage/productpage';
 import { ProductProvider } from './context/productContext';
 import CatalogItem from './components/catalog/catalogItem/catalogItem';
+import CartPage from './components/cartpage/cartpage';
+
 
 
 
@@ -28,8 +30,11 @@ export default class App extends React.Component {
               <ProductProvider>
               <Header/>
               <Switch>
-                <Route path="/:id?">
+                <Route path="/catalog">
                 <Catalog/>
+                </Route>
+                <Route path="/cart">
+                  <CartPage/>
                 </Route>
               </Switch>
               </ProductProvider>

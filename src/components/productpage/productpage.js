@@ -48,7 +48,7 @@ class ProductPage extends React.Component {
 
 render() {
 
-   console.log(this.state?.product)
+   console.log(() => this.props.changeId(), "PROPS ID")
 
     return(
         <div className='productmodal'>
@@ -114,7 +114,7 @@ render() {
             Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.
             </div>
         </div>
-        <Link to="/">Exit</Link>
+        <div onClick={() => this.props.changeId("")}>Exit</div>
     </div>
         
         

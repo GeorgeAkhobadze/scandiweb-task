@@ -19,7 +19,7 @@ class CatalogItem extends React.Component {
         return(
             <ProductContext.Consumer>{(productContext) => {
                 const { productId, changeId } = productContext;
-                // console.log("PRODUCT ID:", productId)
+                console.log("PRODUCT ID:", productId)
 
                 return(
                     <div className="catalogitem" disabled={!this.props.inStock} onClick={() => changeId(this.props.id)}>

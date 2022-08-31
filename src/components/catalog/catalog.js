@@ -16,14 +16,14 @@ class Catalog extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { CatalogItemVisible: "" }
+        this.state = { CatalogItemVisible: false }
     }
 
     componentDidMount() {
-        if(this.props?.match.params.id !== undefined) {
-            this.setState({CatalogItemVisible: this.props.match.params.id})
-            document.body.style.overflowY = "hidden"
-        } 
+        // if(this.props?.match.params.id !== undefined) {
+        //     this.setState({CatalogItemVisible: true})
+        //     document.body.style.overflowY = "hidden"
+        // } 
     }
 
 
@@ -32,25 +32,22 @@ class Catalog extends React.Component {
 
     render() {
         console.log(this.props.match.params.id, "this is ID")
-        // console.log(this.state.CatalogItemVisible)
 
         return (
             <PriceContext.Consumer>{(priceContext) => (
                 <CatalogContext.Consumer>{(catalogContext) => (
                     <ProductContext.Consumer>{(productContext) => {
                         const { productId, productModalVisible, changeId } = productContext
-                        console.log(productId, " PROD CON")
                         const { productList } = catalogContext;
                         const { priceList, priceValue } = priceContext;
                         const CurrencyPosition = priceList.map(function(currency){return currency.symbol}).indexOf(priceValue)
                         return(
                             <div className="catalog">
                                 {this.state.CatalogItemVisible && 
-                                <ProductPage id={productId}/>
+                                <ProductPage changeId={changeId} id={this.props.match.params.id}/>
                                 }
                                 
                             {productList.map((product,i) => {
-                                // console.log(product)
                                 return(
                                     <CatalogItem location={this.props} history={this.props.history} id={product.id} key={i} name={product.name} image={product.gallery} price={`${priceValue}` + product.prices[CurrencyPosition].amount} inStock={product.inStock} />
                                 )
